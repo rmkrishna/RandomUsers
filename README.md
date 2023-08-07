@@ -83,3 +83,7 @@ git tag -a 1.7.3
 git push origin 1.7.3
 ```
 Tag is created on a commit
+
+## Changes
+
+* [Change Log](Docs/Changes.md)
