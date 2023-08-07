@@ -48,3 +48,38 @@ We will take 10 users.
 ## Validation of JAVA notions (to ignore if you are full kotlin and it's better):
 - Last version used.
 - Lambda...
+
+
+## Workflow
+
+![image](Docs/Resources/git-workflow.png)
+
+1. The repo is created with only a `main` branch, by default.
+2. A `develop` branch is created from `main`.
+3. `feature/*` branches are created from `develop`.
+4. When a feature is complete, it's merged into `develop` (via PR) and then removed.
+5. To initiate a release, a `release/*` branch is created from `develop`.
+6. When a release is complete, `release/*` is merged into `develop` and `main`, tagged, and then removed.
+7. If an issue in `main` needs to be resolved, a `hotfix/*` branch is created from `main`.
+8. When the hotfix release is complete, `hotfix/*` is merged into `develop` and `main`, tagged, and then removed.
+
+## Git commands
+
+Creating new feature branch
+```
+git checkout -b feature/x
+```
+
+Merge feature branch back
+```
+git merge --no-ff feature/x
+```
+We use tag `--no-ff` to ensure a merge commit is created.
+without --no-ff then if possible git will fast-forward merge and not create merge commit if there is a linear path. (this is same as git command `rebase` that will always fast-forward)
+Changes.md
+Tag
+```
+git tag -a 1.7.3
+git push origin 1.7.3
+```
+Tag is created on a commit
