@@ -22,6 +22,8 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField("String", "BASE_API", "\"https://randomuser.me/\"")
     }
 
     buildTypes {
