@@ -46,7 +46,7 @@ fun UsersScreen(goToDetails: (String) -> Unit) {
 @Composable
 fun UsersScreen(goToDetails: (String) -> Unit, viewModel: UsersViewModel) {
     val uiState by remember { viewModel.uiState }.collectAsState()
-    val effect by remember { viewModel.effect }.collectAsState(initial = UsersEffect.None)
+//    val effect by remember { viewModel.effect }.collectAsState(initial = UsersEffect.None)
 
     val (pleaseWaitDialog, showPleaseWaitDialog) = remember { mutableStateOf(false) }
     showPleaseWaitDialog(uiState.isLoading)
