@@ -86,4 +86,4 @@ Tag is created on a commit
 
 ## Changes
 
-* [Change Log](Docs/Changes.md)
+* [Change Log](Doc/Changes.md)
