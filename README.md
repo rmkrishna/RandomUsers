@@ -52,7 +52,7 @@ We will take 10 users.
 
 ## Workflow
 
-![image](Docs/Resources/git-workflow.png)
+![image](Doc/Resources/git-workflow.png)
 
 1. The repo is created with only a `main` branch, by default.
 2. A `develop` branch is created from `main`.
