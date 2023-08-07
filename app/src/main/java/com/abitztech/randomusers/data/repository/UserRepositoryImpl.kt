@@ -2,6 +2,7 @@ package com.abitztech.randomusers.data.repository
 
 import com.abitztech.randomusers.data.local.db.dao.UserDao
 import com.abitztech.randomusers.data.local.db.entity.UserEntity
+import com.abitztech.randomusers.data.local.db.entity.getModel
 import com.abitztech.randomusers.data.local.db.entity.getModels
 import com.abitztech.randomusers.data.model.Result
 import com.abitztech.randomusers.data.model.User
@@ -15,6 +16,8 @@ import kotlinx.coroutines.flow.flow
 class UserRepositoryImpl @Inject constructor(
     private val api: UserService, private val userDao: UserDao
 ) : UsersRepository {
+
+    override suspend fun getUser(id: String): User? = userDao.getEntity(id)?.getModel()
 
     override suspend fun getRandomUser(): Flow<Result<List<User>>> = flow {
         val cachedUsers = userDao.getAll()

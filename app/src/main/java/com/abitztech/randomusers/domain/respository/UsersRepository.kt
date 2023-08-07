@@ -6,4 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface UsersRepository {
     suspend fun getRandomUser(): Flow<Result<List<User>>>
+    suspend fun getUser(id: String): User?
 }
